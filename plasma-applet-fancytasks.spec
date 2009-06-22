@@ -8,6 +8,7 @@ Group: 		Graphical desktop/KDE
 URL:		http://www.kde-look.org/content/show.php/Fancy+Tasks?content=99737
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	plasma-devel
+BuildRequires:	kdebase4-workspace-devel
 Requires:       kdebase4-runtime
 
 %description
