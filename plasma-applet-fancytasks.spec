@@ -10,7 +10,7 @@ URL:		http://www.kde-look.org/content/show.php/Fancy+Tasks?content=99737
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	plasma-devel
 BuildRequires:	kdebase4-workspace-devel
-BuildRequires:	kdelibs4-devel
+BuildRequires:	qimageblitz-devel
 Requires:       kdebase4-runtime => 4.2.96
 
 %description
@@ -44,7 +44,7 @@ and tasks needing attention).
 %_kde_libdir/kde4/plasma_applet_fancytasks.so
 %_kde_appsdir/desktoptheme/default/widgets/fancytasks.svgz
 %_kde_services/plasma-applet-fancytasks.desktop
-#%_kde_datadir/locale/*/LC_MESSAGES/*.mo
+
 
 #--------------------------------------------------------------------
 
