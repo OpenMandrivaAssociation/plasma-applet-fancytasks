@@ -1,9 +1,8 @@
 Summary:        Plasmoid for fancy representing your tasks and launchers	
 Name:		plasma-applet-fancytasks
-Version: 	0.9.1
+Version: 	0.9.2
 Release: 	%mkrel 1
 Source0: 	http://www.kde-look.org/CONTENT/content-files/99737-fancytasks-%{version}.tar.bz2
-Source1:	fancytasks.svgz
 License: 	GPLv2
 Group: 		Graphical desktop/KDE
 URL:		http://www.kde-look.org/content/show.php/Fancy+Tasks?content=99737
@@ -57,14 +56,13 @@ and tasks needing attention).
 %make
 
 %install
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 %{makeinstall_std} -C build
 
-# Fixing the svgz error
-cp -f %{SOURCE1} %{buildroot}/%_kde_appsdir/desktoptheme/default/widgets/
+
 
 %find_lang plasma_applet_fancytasks
 
 %clean
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
