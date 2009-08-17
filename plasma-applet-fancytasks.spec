@@ -1,17 +1,17 @@
 Summary:        Plasmoid for fancy representing your tasks and launchers	
 Name:		plasma-applet-fancytasks
 Version: 	0.9.5
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Source0: 	http://www.kde-look.org/CONTENT/content-files/99737-fancytasks-%{version}.tar.bz2
+Patch0:		fixing-favorite-launcher-fancytask.patch
 License: 	GPLv2
 Group: 		Graphical desktop/KDE
 URL:		http://www.kde-look.org/content/show.php/Fancy+Tasks?content=99737
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	plasma-devel
-#BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	kdebase4-devel
 BuildRequires:	qimageblitz-devel
-Requires:       kdebase4-runtime => 4.2.96
+Requires:       kdebase4-runtime => 4.3
 
 %description
 Plasmoid for fancy representing your tasks and launchers. Inspired by
@@ -52,6 +52,7 @@ and tasks needing attention).
 
 %prep
 %setup -q -n fancytasks-%{version}
+%patch0 -p0
 
 %build
 %cmake_kde4
