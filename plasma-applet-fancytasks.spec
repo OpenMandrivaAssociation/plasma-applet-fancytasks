@@ -1,6 +1,6 @@
 Summary:	Plasmoid for fancy representing your tasks and launchers
 Name:		plasma-applet-fancytasks
-Version:	1.0.92
+Version:	1.0.93
 Release:	%mkrel 1
 Source0:	http://www.kde-look.org/CONTENT/content-files/99737-fancytasks-%{version}.tar.bz2
 License:	GPLv2
