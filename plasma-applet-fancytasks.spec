@@ -1,15 +1,15 @@
 Summary:	Plasmoid for fancy representing your tasks and launchers
 Name:		plasma-applet-fancytasks
-Version:	1.0.94
-Release:	%mkrel 1
-Source0:	http://www.kde-look.org/CONTENT/content-files/99737-fancytasks-%{version}.tar.bz2
+Version:	1.1.2
+Release:	1
 License:	GPLv2
 Group:		Graphical desktop/KDE
 URL:		http://www.kde-look.org/content/show.php/Fancy+Tasks?content=99737
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Source0:	http://www.kde-look.org/CONTENT/content-files/99737-fancytasks-%{version}.tar.bz2
 BuildRequires:	kdebase4-devel
+BuildRequires:	kdebase4-workspace-devel
 BuildRequires:	qimageblitz-devel
-Requires:	kdebase4-runtime => 4.3
+Requires:	kdebase4-runtime
 Provides:	plasma-applet
 
 %description
@@ -37,34 +37,29 @@ appearance (optional thumbnails, reflections and text label);
 - fully animated icons (including animations of starting applications
 and tasks needing attention).
 
-%files -f plasma_applet_fancytasks.lang 
-%defattr(-,root,root)
+%files -f plasma_applet_fancytasks.lang
 %doc INSTALL COPYING README TODO CHANGELOG
-%_kde_libdir/kde4/plasma_applet_fancytasks.so
-%_kde_appsdir/desktoptheme/default/widgets/fancytasks.svgz
-%_kde_services/plasma-applet-fancytasks.desktop
-%_kde_libdir/kde4/plasma_containment_fancypanel.so
-%_kde_services/plasma-containment-fancypanel.desktop
-
+%{_kde_libdir}/kde4/plasma_applet_fancytasks.so
+%{_kde_appsdir}/desktoptheme/default/widgets/fancytasks.svgz
+%{_kde_services}/plasma-applet-fancytasks.desktop
+%{_kde_libdir}/kde4/plasma_containment_fancypanel.so
+%{_kde_services}/plasma-containment-fancypanel.desktop
 
 #--------------------------------------------------------------------
 
 %prep
 %setup -q -n fancytasks-%{version}
-#%patch0 -p 0
+
 %build
 %cmake_kde4
 %make
 
 %install
-%__rm -rf %{buildroot}
-%{makeinstall_std} -C build
+%makeinstall_std -C build
 
-%find_lang plasma_applet_fancytasks 
+%find_lang plasma_applet_fancytasks
 # Containement fancy panel now have some localisations, since it's still experimental
 # and upstream does not want to split the package i'm merging the language file list
 %find_lang plasma_containment_fancypanel
 cat plasma_containment_fancypanel.lang >> plasma_applet_fancytasks.lang
 
-%clean
-%__rm -rf %{buildroot}
