@@ -4,7 +4,7 @@ Version:	1.1.2
 Release:	2
 License:	GPLv2
 Group:		Graphical desktop/KDE
-URL:		http://www.kde-look.org/content/show.php/Fancy+Tasks?content=99737
+URL:		https://www.kde-look.org/content/show.php/Fancy+Tasks?content=99737
 Source0:	http://www.kde-look.org/CONTENT/content-files/99737-fancytasks-%{version}.tar.bz2
 BuildRequires:	kdebase4-devel
 BuildRequires:	kdebase4-workspace-devel
